@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  ai-jam:
+    image: michaelnau/ai-jam:latest
+    ports:
+      - 5500:5500
