@@ -6,7 +6,7 @@ services:
     ports:
       - 5500:5500
   swag:
-    image: lscr.io/linuxserver/swag
+    image: linuxserver/swag
     container_name: swag
     cap_add:
       - NET_ADMIN
