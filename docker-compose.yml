@@ -16,6 +16,7 @@ services:
       - TZ=Australia/Sydney 
       - URL=michael-naughton.com
       - SUBDOMAINS=www,
+      - DNSPLUGIN=linode
       - VALIDATION=http
       - EMAIL=michael.naughton77@gmail.com
     volumes:
