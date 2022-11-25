@@ -1,20 +1,12 @@
 version: "3.7"
 
-networks:
-  a-network:
-    external: true
-
 services:
   ai-jam:
     image: michaelnau/ai-jam:latest
-    networks:
-      - a-network
     ports:
       - 5500:5500
   swag:
     image: lscr.io/linuxserver/swag
-    networks:
-      - a-network
     container_name: swag
     cap_add:
       - NET_ADMIN
@@ -28,18 +20,6 @@ services:
       - EMAIL=michael.naughton77@gmail.com
     volumes:
       - /root/mike/appdata/swag:/config
-    ports:
-      - 443:443
-      - 80:80
-    restart: unless-stopped
-
-  nginx:
-    image: linuxserver/nginx
-    container_name: nginx
-    environment:
-      - PUID=1001
-      - PGID=1001
-      - TZ=Australia/Sydney
     ports:
       - 443:443
       - 80:80
