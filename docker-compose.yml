@@ -23,4 +23,5 @@ services:
       - /root/mike/appdata/swag:/config
     ports:
       - 443:443
+      - 80:80
     restart: unless-stopped
