@@ -19,7 +19,7 @@ services:
       - VALIDATION=http
       - EMAIL=michael.naughton77@gmail.com
     volumes:
-      - /root/mike/appdata/swag:/config
+      - /opt/swag/config:/config
     ports:
       - 443:443
       - 80:80
