@@ -1,37 +1,37 @@
 version: "3.7"
 
 networks:
-  default:
+  a-network:
     external: true
 
 services:
   ai-jam:
     image: michaelnau/ai-jam:latest
     networks:
-      - default
+      - a-network
     ports:
       - 5500:5500
-  # swag:
-  #   image: lscr.io/linuxserver/swag
-  #   networks:
-  #     - mynetwork
-  #   container_name: swag
-  #   cap_add:
-  #     - NET_ADMIN
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - TZ=Australia/Sydney 
-  #     - URL=michael-naughton.com
-  #     - SUBDOMAINS=www,
-  #     - VALIDATION=http
-  #     - EMAIL=michael.naughton77@gmail.com
-  #   volumes:
-  #     - /root/mike/appdata/swag:/config
-  #   ports:
-  #     - 443:443
-  #     - 80:80
-  #   restart: unless-stopped
+  swag:
+    image: lscr.io/linuxserver/swag
+    networks:
+      - a-network
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Australia/Sydney 
+      - URL=michael-naughton.com
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      - EMAIL=michael.naughton77@gmail.com
+    volumes:
+      - /root/mike/appdata/swag:/config
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped
 
   nginx:
     image: linuxserver/nginx
