@@ -7,8 +7,8 @@ networks:
 services:
   ai-jam:
     image: michaelnau/ai-jam:latest
-    networks:
-      - mynetwork
+    # networks:
+    #   - mynetwork
     ports:
       - 5500:5500
   # swag:
