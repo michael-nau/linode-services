@@ -24,14 +24,3 @@ services:
       - 443:443
       - 80:80
     restart: unless-stopped
-  nginx:
-    image: linuxserver/nginx
-    container_name: nginx
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    ports:
-      - 443:443
-      - 80:80
-    restart: unless-stopped
