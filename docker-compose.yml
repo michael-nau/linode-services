@@ -11,16 +11,16 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1001
+      - PGID=1001
       - TZ=Australia/Sydney 
       - URL=michael-naughton.com
-      - SUBDOMAINS=www,
+      - SUBDOMAINS=www
       - VALIDATION=http
       - EMAIL=michael.naughton77@gmail.com
     volumes:
-      - /root/mike/appdata/swag:/config
+      - /opt/webserver_swag/config:/config
     ports:
       - 443:443
       - 80:80
-    restart: unless-stopped
+    restart: always
